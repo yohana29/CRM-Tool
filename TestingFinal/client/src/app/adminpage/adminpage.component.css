@@ -8,3 +8,6 @@ element.style {
   cursor: pointer;
 }
 
+table .btn {
+  margin: 2px;
+}

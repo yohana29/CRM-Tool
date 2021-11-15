@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators'
@@ -37,8 +37,12 @@ export class EmployeeService {
     this.currentEmployeeSource.next(null);
   }
 
-  adminticketview() {
-    return this.http.get(this.baseUrl + 'TicketAssignment')
+  adminticketview(username:any) {
+    return this.http.get(this.baseUrl + 'TicketAssignment/' + username)
+  }
+
+  adminticketack(modeladmin: any) {
+    return this.http.put(this.baseUrl + 'EmployeeUserAccounts/TicketStatusAck', {}, { params: { id: modeladmin } })
   }
 
 

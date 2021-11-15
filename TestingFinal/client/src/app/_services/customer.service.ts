@@ -36,7 +36,6 @@ export class CustomerService {
     this.currentCustomerSource.next(null);
   }
 
-  //on my own
   register(modelregister:any) {
     return this.http.post(this.baseUrl + 'EmployeeUserAccounts/CustomerRegister', modelregister)
   }
@@ -46,7 +45,7 @@ export class CustomerService {
   }
 
   customerticketview(custid: any) {
-    return this.http.get(this.baseUrl + 'Ticket',custid)
+    return this.http.get(this.baseUrl + 'Ticket/' + custid)
   }
 
 

@@ -29,13 +29,10 @@
   <div>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container">
-        <a class="navbar-brand" routerLink="/customer">BankingMadeEasy</a>
+        <a class="navbar-brand" routerLink="/admin">BankingMadeEasy</a>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/customer" (click)="home()">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/newticket">Create New Tickets</a>
+            <a class="nav-link" routerLink="/admin" (click)="home()">Home</a>
           </li>
         </ul>
 
@@ -50,26 +47,76 @@
     </nav>
 
     <div>
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <th>customerid</th>
-            <th>category</th>
-            <th>subcategory</th>
-            <th>contactnumber</th>
-            <th>comments</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let adticketsviews of adticketsview">
-            <td><span>{{adticketsviews.customerid}}</span></td>
-            <td><span>{{adticketsviews.category}}</span></td>
-            <td><span>{{adticketsviews.subCategory}}</span></td>
-            <td><span>{{adticketsviews.contactNumber}}</span></td>
-            <td><span>{{adticketsviews.comments}}</span></td>
-          </tr>
-        </tbody>
-      </table>
+      <!--<table style="width: 1100px; height: 200px; padding: 20px;
+           margin-top: 70px" class="table table-bordered table-striped container">
+    <thead>
+      <tr>
+        <th>TicketId</th>
+        <th>CustomerId</th>
+        <th>Category</th>
+        <th>SubCategory</th>
+        <th>ContactNumber</th>
+        <th>Comments</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let adticketsviews of adticketsview; let j=index">
+        <td><span>{{adticketsviews.id}}</span>-->
+      <!--<span (click)="ticketack(adticketsview[j])">edit</span>-->
+      <!--</td>
+        <td><span>{{adticketsviews.customerid}}</span></td>
+        <td><span>{{adticketsviews.category}}</span></td>
+        <td><span>{{adticketsviews.subCategory}}</span></td>
+        <td><span>{{adticketsviews.contactNumber}}</span></td>
+        <td><span>{{adticketsviews.comments}}</span></td>
+        <td>
+          <button class="btn btn-sm btn-info" (click)="ticketack(adticketsview[j])">
+            <i class="fa fa-search"></i>Acknowledge
+          </button>
+          <button class="btn btn-sm btn-danger">
+            <i class="fa fa-remove"></i>Close
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>-->
+
+
+      <table style="width: 1100px; height: 200px; padding: 20px;
+         margin-top: 70px" class="table table-bordered table-striped container">
+  <thead>
+    <tr>
+      <th>TicketId</th>
+      <th>CustomerId</th>
+      <th>Category</th>
+      <th>SubCategory</th>
+      <th>ContactNumber</th>
+      <th>Comments</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let adticketsviews of adticketsview; let j=index">
+      <td><span>{{adticketsviews.id}}</span>
+      </td>
+        <td><span>{{adticketsviews.customerid}}</span></td>
+        <td><span>{{adticketsviews.category}}</span></td>
+        <td><span>{{adticketsviews.subCategory}}</span></td>
+        <td><span>{{adticketsviews.contactNumber}}</span></td>
+        <td><span>{{adticketsviews.comments}}</span></td>
+        <td>
+          <button class="btn btn-sm btn-info" (click)="ticketack(adticketsview[j])">
+            <i class="fa fa-search"></i>Acknowledge
+          </button>
+          <button class="btn btn-sm btn-danger">
+            <i class="fa fa-remove"></i>Close
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>
