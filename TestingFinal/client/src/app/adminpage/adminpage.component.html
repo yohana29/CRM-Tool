@@ -1,0 +1,77 @@
+<nav *ngIf="!viewtickets" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/admin">BankingMadeEasy</a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin">Edit Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin" (click)="adminviewtickets()">View Tickets</a>
+      </li>
+    </ul>
+
+
+    <div class="dropdown" dropdown>
+      <a class="dropdown-toggle text-light" dropdownToggle>Welcome Admin</a>
+      <div class="dropdown-menu mt-3" *dropdownMenu>
+        <a class="dropdown-item">Escalate Ticket</a>
+        <a class="dropdown-item" (click)="logout()">Logout</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<div *ngIf="viewtickets">
+  <div>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container">
+        <a class="navbar-brand" routerLink="/customer">BankingMadeEasy</a>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/customer" (click)="home()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/newticket">Create New Tickets</a>
+          </li>
+        </ul>
+
+        <div class="dropdown" dropdown>
+          <a class="dropdown-toggle text-light" dropdownToggle>Welcome</a>
+          <div class="dropdown-menu mt-3" *dropdownMenu>
+            <a class="dropdown-item">Edit Profile</a>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>customerid</th>
+            <th>category</th>
+            <th>subcategory</th>
+            <th>contactnumber</th>
+            <th>comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let adticketsviews of adticketsview">
+            <td><span>{{adticketsviews.customerid}}</span></td>
+            <td><span>{{adticketsviews.category}}</span></td>
+            <td><span>{{adticketsviews.subCategory}}</span></td>
+            <td><span>{{adticketsviews.contactNumber}}</span></td>
+            <td><span>{{adticketsviews.comments}}</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

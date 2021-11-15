@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/customer">BankingMadeEasy</a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/customer">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/customer">View Tickets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/newticket">Create New Tickets</a>
+      </li>
+    </ul>
+
+
+    <div class="dropdown" dropdown>
+      <a class="dropdown-toggle text-light" dropdownToggle>Welcome</a>
+      <div class="dropdown-menu mt-3" *dropdownMenu>
+        <a class="dropdown-item">Edit Profile</a>
+        <a class="dropdown-item" (click)="logout()">Logout</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+<div class="container" style="margin-top:100px">
+  <body>
+    <div class="card mb-4 box-shadow">
+      <div class="text-center">
+        <form class="form-signin" (ngSubmit)="createticket()">
+          <div class="card-header">
+            <h1 class="h3 mb-4 font-weight-normal">Create new Ticket</h1>
+          </div>
+          <div class="card-body">
+            <div class="col-md-7 mb-3">
+              <input type="text"
+                     id="inputEmail"
+                     name="Customerid"
+                     [(ngModel)]="modelnewticket.customerid"
+                     class="form-control"
+                     placeholder="CustomerId"
+                     required=""
+                     autofocus="">
+            </div>
+            <div class="col-md-7 mb-3">
+              <select class="custom-select d-block w-100" id="country" name="category" required="" [(ngModel)]="modelnewticket.category" placeholder="Category">
+                <option [ngValue]="null" [disabled]="true">Select a Category</option>
+                <option value="ATM">ATM</option>
+                <option value="Transaction">Transaction</option>
+              </select>
+            </div>
+            <div class="col-md-7 mb-3">
+              <select class="custom-select d-block w-100" id="state" name="subcategory" required="" [(ngModel)]="modelnewticket.subcategory">
+                <option [ngValue]="null" [disabled]="true">Select a SubCategory</option>
+                <option>Lost ATM card and Request a new one</option>
+                <option>Reapplied ATM Card but not delivered</option>
+                <option>Request a new card due to damage to the old card</option>
+                <option>Amount not credited to account</option>
+                <option>Fraudulent transactions</option>
+                <option>Not able to transfer money</option>
+              </select>
+            </div>
+
+            <div class="col-md-7 mb-3">
+              <input type="number"
+                     id="contactno"
+                     name="number"
+                     [(ngModel)]="modelnewticket.contactnumber"
+                     class="form-control"
+                     placeholder="Contactno"
+                     required="">
+            </div>
+            <div class="col-md-10 mb-3">
+              <input type="text"
+                     id="comments"
+                     name="comments"
+                     [(ngModel)]="modelnewticket.comments"
+                     class="form-control"
+                     placeholder="comments"
+                     required="">
+            </div>
+            <div class="col-md-7 mb-3">
+              <select class="custom-select d-block w-100" id="country" name="category" required="" [(ngModel)]="modelnewticket.status" placeholder="Category">
+                <option [ngValue]="null" [disabled]="true">Ticket Status</option>
+                <option value="Open">Open</option>
+              </select>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+            <button class="btn btn-lg btn-primary btn-block" type="button" (click)="cancel()">Cancel</button>
+          </div>
+</form>
+      </div>
+    </div>
+
+  </body>
+
+</div>

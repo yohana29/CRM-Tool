@@ -1,0 +1,10 @@
+element.style {
+  display: block;
+  height: 239px;
+  width: 568px;
+}
+
+.dropdown-toggle, .dropdown-item {
+  cursor: pointer;
+}
+

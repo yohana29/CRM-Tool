@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">BankingMadeEasy</a>
+    <ul class="navbar-nav mr-auto" *ngIf="employeeservice.currentEmployee$ | async">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contacts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Help</a>
+      </li>
+    </ul>
+
+
+    <div class="dropdown" *ngIf="employeeservice.currentEmployee$ | async" dropdown>
+      <a class="dropdown-toggle text-light" dropdownToggle>Welcome Employee</a>
+      <div class="dropdown-menu mt-3" *dropdownMenu>
+        <a class="dropdown-item">Edit Profile</a>
+        <a class="dropdown-item" (click)="logout()">Logout</a>
+      </div>
+    </div>
+
+
+    <form *ngIf="(employeeservice.currentEmployee$ | async)===null" #adminloginform="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()"
+          autocomplete="off">
+      <input name="Username"
+             [(ngModel)]="modelcust.username"
+             class="form-control mr-sm-2"
+             type="text"
+             placeholder="AdminId">
+      <input name="password"
+             [(ngModel)]="modelcust.password"
+             class="form-control mr-sm-2"
+             type="password"
+             placeholder="Password">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+    </form>
+
+  </div>
+</nav>
+
+<div class="container" style="margin-top:100px">
+  <app-logintest></app-logintest>
+</div>
+
+
+

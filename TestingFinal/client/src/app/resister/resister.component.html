@@ -1,0 +1,47 @@
+<body>
+  <div class="card mb-7 box-shadow">
+    <div class="text-center">
+      <form class="form-signin" (ngSubmit)="register()">
+        <div class="card-header">
+          <h1 class="h3 mb-3 font-weight-normal">Customer Register</h1>
+        </div>
+        <div class="card-body">
+          <input type="text"
+                 id="inputEmail"
+                 [(ngModel)]="modelregister.customerid"
+                 name="Customerid"
+                 class="form-control"
+                 placeholder="CustomerId"
+                 required=""
+                 autofocus="">
+          <input type="password"
+                 id="inputPassword"
+                 [(ngModel)]="modelregister.password"
+                 name="password"
+                 class="form-control"
+                 placeholder="Password"
+                 required="">
+          <input type="number"
+                 id="inputaccnum"
+                 [(ngModel)]="modelregister.accountNumber"
+                 name="accountnumber"
+                 class="form-control"
+                 placeholder="AccountNumber"
+                 required="">
+          <input type="number"
+                 id="inputroutingnum"
+                 [(ngModel)]="modelregister.routingNumber"
+                 name="routingnumber"
+                 class="form-control"
+                 placeholder="RoutingNumber"
+                 required="">
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
+          <button class="btn btn-lg btn-primary btn-block" type="button" (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
