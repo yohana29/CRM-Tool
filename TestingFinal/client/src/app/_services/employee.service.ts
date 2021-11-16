@@ -37,13 +37,30 @@ export class EmployeeService {
     this.currentEmployeeSource.next(null);
   }
 
-  adminticketview(username:any) {
+  //adminticketview(username:any) {
+  //  return this.http.get(this.baseUrl + 'TicketAssignment/' + username)
+  //}
+
+  adminticketassignmentview(username: any) {
     return this.http.get(this.baseUrl + 'TicketAssignment/' + username)
   }
+
+  adminticketviewdetailed(ticketid: any) {
+    return this.http.get(this.baseUrl + 'customer/' + ticketid)
+  }
+
 
   adminticketack(modeladmin: any) {
     return this.http.put(this.baseUrl + 'EmployeeUserAccounts/TicketStatusAck', {}, { params: { id: modeladmin } })
   }
 
+  adminticketclose(modeladmin: any) {
+    return this.http.put(this.baseUrl + 'EmployeeUserAccounts/TicketStatusClose', {}, { params: { id: modeladmin } })
+  }
+
+  adminticketdelete(admindelete: any) {
+    return this.http.delete(this.baseUrl + 'TicketAssignment', { params: { ticketid: admindelete } })
+
+  }
 
 }

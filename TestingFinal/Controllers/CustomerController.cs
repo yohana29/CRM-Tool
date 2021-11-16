@@ -23,11 +23,18 @@ namespace TestingFinal.Controllers
             return await _context.CustomerLoginDetails.ToListAsync();
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<AppCustomerlogin>> GetCustomers(int id)
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<AppCustomerlogin>> GetCustomers(int id)
+        //{
+        //    return await _context.CustomerLoginDetails.FindAsync(id);
+        //}
+
+        [HttpGet("{ticketid}")]
+        public async Task<ActionResult<List<AppTicket>>> GetTickets(int ticketid)
         {
-            return await _context.CustomerLoginDetails.FindAsync(id);
+            return await _context.TicketDetails.Where(s => s.id == ticketid).ToListAsync();
         }
+
 
         //[HttpGet("{customerid}")]
         //public async Task<ActionResult<AppTicket>> GetCustomersTickets(string customerid)
