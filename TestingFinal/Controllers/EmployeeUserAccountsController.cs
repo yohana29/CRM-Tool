@@ -120,7 +120,8 @@ namespace TestingFinal.Controllers
                 SubCategory = ticketDto.SubCategory,
                 Comments = ticketDto.Comments,
                 ContactNumber = ticketDto.ContactNumber,
-                Status = ticketDto.Status
+                Status = ticketDto.Status,
+                BranchLocation = ticketDto.BranchLocation
             };
             _context.TicketDetails.Add(ticket);
             await _context.SaveChangesAsync();

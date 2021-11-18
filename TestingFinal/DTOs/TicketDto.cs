@@ -20,6 +20,7 @@ namespace CustomerTicketing.DTOs
         public double ContactNumber { get; set; }
         [Required]
         public string Status { get; set; }
+        public string BranchLocation { get; set; }
 
     }
 }

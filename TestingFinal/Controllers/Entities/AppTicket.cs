@@ -17,5 +17,12 @@ namespace TestingFinal.Controllers.Entities
 
         //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public string Status { get; set; }
+
+        public string BranchLocation { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public string CreatedMonth { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public int CreatedYear { get; set; }
+
     }
 }

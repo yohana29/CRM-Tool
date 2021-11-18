@@ -86,6 +86,17 @@
                 <option value="Open">Open</option>
               </select>
             </div>
+
+            <div class="col-md-10 mb-3">
+              <input type="text"
+                     id="location"
+                     name="location"
+                     [(ngModel)]="modelnewticket.branchlocation"
+                     class="form-control"
+                     placeholder="Branch Location"
+                     required="">
+            </div>
+
             <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
             <button class="btn btn-lg btn-primary btn-block" type="button" (click)="cancel()">Cancel</button>
           </div>
